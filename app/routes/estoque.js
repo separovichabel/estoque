@@ -7,6 +7,4 @@ module.exports = function(app){
         //.post(api.post);
 
     //app.delete('/produtos/:id', api.deletar);
-
-
 };

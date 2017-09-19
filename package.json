@@ -1,0 +1,18 @@
+{
+  "name": "estoque",
+  "version": "1.0.0",
+  "description": "cuida do estoque",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abel Separovich",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "consign": "^0.1.6",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.11"
+  }
+}

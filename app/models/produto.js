@@ -11,11 +11,11 @@ var schema = mongoose.Schema({
     },
     quantidadeDisponivel: {
         type: Number,
-        required: true
+        required: false
     },
     valorUnitario: {
         type: Number,
-        required: true
+        required: false
     }
 });
 

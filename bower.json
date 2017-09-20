@@ -1,0 +1,17 @@
+{
+  "name": "estoque",
+  "description": "cuida do estoque mesmo",
+  "main": "main.js",
+  "authors": [
+    "Abel Separovich"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/separovichabel/estoque",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

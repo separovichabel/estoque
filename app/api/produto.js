@@ -3,22 +3,30 @@ var mongoose = require('mongoose')
 var api = {};
 var model = mongoose.model('Produto');
 
+
 //Listar todos os itens
 api.listar = function(req, res){
 
-/*    model.find(function(err, produtos){
+    model.find(function(err, produtos){
         if(err){
             res.status(500).json(err);
         }
         res.json(produtos);
-    })*/
+    })
 };
 
 //filtrar um item
-api.filtrar = function(req, res){
-    res.send('filtrando')
+api.achar = function(req, res){
+    model.find({ titulo: req.params.titulo }, function(err, item) {
+    if (err) throw err;
+
+    res.json(item)
+    });
 };
 
+api.teste = function(req, res){
+    res.send(req.params.titulo)
+};
 
 //Criando um item
 api.criar = function(req, res){
@@ -48,7 +56,6 @@ api.deletar = function(req, res){
         }, function(err) {
             console.log(err);
             res.status(500).json(err);
-        });
-*/
+        }); */
 };
 module.exports = api;

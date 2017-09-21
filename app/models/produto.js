@@ -5,18 +5,18 @@ var schema = mongoose.Schema({
         type: String,
         required: true
     },
-    descrição: {
+    descricao: {
         type: String,
         required: false
     },
-    quantidadeDisponivel: {
+    quantidade: {
         type: Number,
         required: false
     },
-    valorUnitario: {
+    valor: {
         type: Number,
         required: false
     }
 });
 
-mongoose.model('Produto', schema);
+mongoose.model('produtos', schema);

@@ -7,7 +7,6 @@ module.exports = function(app){
 
     app.get('/achar/:titulo', api.achar);
 
-    app.get('/teste/:titulo', api.teste);
 
     //app.delete('/produtos/:id', api.deletar);
 };

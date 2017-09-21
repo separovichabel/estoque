@@ -1,7 +1,7 @@
 module.exports = function() {
 
     var mongoose = require('mongoose'),
-        url = 'mongodb://localhost/database';
+        url = 'mongodb://localhost/mean';
 
     mongoose.connect(url, {
         useMongoClient: true,

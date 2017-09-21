@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="main">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <title>Main</title>
         <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
-    </head>
-    <body>
         <script src="components/angular/angular.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/controllers/products-ctrl.js"></script>
         <script src="components/jquery/dist/jquery.js"></script>
         <script src="components/bootstrap/dist/js/bootstrap.js"></script>
+
+    </head>
+    <body ng-controller="productController">
+
+        <div class="container jumbotron">
+            <h1 class="text-center">Main</h1>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Produtos</h1>
+
+                <table class="table">
+                    <thead>
+                        <th>Titulo</th>
+                        <th>Descrição</th>
+                        <th>Quantidade Disponivel</th>
+                        <th>Valor Unitario</th>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="produto in produtos">
+                            <td>{{produto.titulo}}</td>
+                            <td>{{produto.descricao}}</td>
+                            <td>{{produto.quantidade}}</td>
+                            <td>{{produto.valor}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><!--conteiner content-->
+
     </body>
 </html>

@@ -1,24 +1,11 @@
-angular.module('main').controller('productController', function($scope){
-    $scope.produtos = [
-        {
-            titulo: 'Primeiro titulo',
-            descricao: '',
-            quantidade: 5,
-            valor: 3.50
-        },
+angular.module('main').controller('productController', function($scope, $http){
+    $scope.produtos = [];
 
-        {
-            titulo: 'Segundo titulo',
-            descricao: 'Uma descri',
-            quantidade: 4,
-            valor: 6.50
-        },
-
-        {
-            titulo: 'terceiro titulo',
-            descricao: ' gostaria de saber se posso usar o MEAN stack numa aplicação angular2 cli.',
-            quantidade: 60,
-            valor: 0.50
-        },
-    ];
+    $http.get('/produtos')
+       .then(function(retorno) {
+           $scope.produtos = retorno.data;
+       })
+       .catch(function(erro) {
+           console.log(erro);
+       });
 });

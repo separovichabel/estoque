@@ -1,4 +1,4 @@
-angular.module('main').controller('productController', function($scope, $http){
+angular.module('main').controller('productCtrl', function($scope, $http){
     $scope.produtos = [];
 
     $http.get('/produtos')

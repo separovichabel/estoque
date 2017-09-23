@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="main">
     <head>
+        <link rel="shortcut icon" href="#"/>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Main</title>
@@ -8,11 +9,12 @@
         <script src="components/angular/angular.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/products-ctrl.js"></script>
+        <script src="js/controllers/product.js"></script>
         <script src="components/jquery/dist/jquery.js"></script>
         <script src="components/bootstrap/dist/js/bootstrap.js"></script>
 
     </head>
-    <body ng-controller="productController">
+    <body ng-controller="productCtrl">
 
         <div class="container jumbotron">
             <h1 class="text-center">Main</h1>
@@ -21,6 +23,33 @@
         <div class="container">
             <div class="row">
                 <h1 class="text-center">Produtos</h1>
+
+                <form novalidate name="form" class="row" ng-submit="submeter()" ng-controller="productController"> <!-- =============FORM============-->
+                    <div class="form-group col-xs-2">
+                        <label for="text">Titulo:</label>
+                        <input ng-model="product.titulo" nome="titulo" type="text" class="form-control" required ng-maxlength="5">
+                        <span ng-show = "form.titulo.$error.required" class="form-control alert-danger">Título obrigatório!</span> <!-- Problema com a Validação-->
+                        <span ng-show="form.titulo.$error.maxlength" class="form-control alert-danger">Teste!</span>
+                    </div>
+                    <div class="form-group col-xs-7">
+                        <label for="text">Descrição:</label>
+                        <input ng-model="product.descricao" nome="descricao" type="text" class="form-control" required ng-maxlength="5">
+                        <span ng-show="form.descricao.$error.required" class="form-control alert-danger">Descricao obrigatório!</span>
+                        <span ng-show="form.descricao.$error.maxlength" class="form-control alert-danger">Teste!</span>
+                    </div>
+                    <div class="form-group col-xs-1">
+                        <label for="text">Quantidade:</label>
+                        <input ng-model="product.quantidade" nome="quantidade" type="number" class="form-control">
+                    </div>
+                    <div class="form-group col-xs-1">
+                        <label for="text">Valor:</label>
+                        <input ng-model="product.valor" nome="valor" type="number" step="0.1" class="form-control">
+                    </div>
+                    <div class="form-group col-xs-1">
+                        <label for="text" ><br></label>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form> <!-- ===================FORM=====================-->
 
                 <table class="table">
                     <thead>

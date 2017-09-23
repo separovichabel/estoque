@@ -10,6 +10,8 @@ angular.module('main').controller('productController', function($scope, $http){
         });
     };
 
+
+
     $scope.submeter = function() {
         console.log($scope.product);
     };

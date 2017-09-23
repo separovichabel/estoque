@@ -20,20 +20,21 @@
             <h1 class="text-center">Main</h1>
         </div>
 
+        <a class="alert alert-info col-xs-12" ng-show="mensagem.length">{{mensagem}}</a>
+
         <div class="container">
             <div class="row">
                 <h1 class="text-center">Produtos</h1>
 
                 <form novalidate name="form" class="row" ng-submit="submeter()" ng-controller="productController"> <!-- =============FORM============-->
-                    <div class="form-group col-xs-2">
+                    <div class="form-group col-xs-3">
                         <label for="text">Titulo:</label>
-                        <input ng-model="product.titulo" nome="titulo" type="text" class="form-control" required ng-maxlength="5">
+                        <input ng-model="product.titulo" value="{{editando.titulo}}" nome="titulo" type="text" class="form-control" required>
                         <span ng-show = "form.titulo.$error.required" class="form-control alert-danger">Título obrigatório!</span> <!-- Problema com a Validação-->
-                        <span ng-show="form.titulo.$error.maxlength" class="form-control alert-danger">Teste!</span>
                     </div>
-                    <div class="form-group col-xs-7">
+                    <div class="form-group col-xs-6">
                         <label for="text">Descrição:</label>
-                        <input ng-model="product.descricao" nome="descricao" type="text" class="form-control" required ng-maxlength="5">
+                        <input ng-model="product.descricao" nome="descricao" type="text" class="form-control" required ng-maxlength="500">
                         <span ng-show="form.descricao.$error.required" class="form-control alert-danger">Descricao obrigatório!</span>
                         <span ng-show="form.descricao.$error.maxlength" class="form-control alert-danger">Teste!</span>
                     </div>
@@ -61,7 +62,10 @@
 
                     <tbody>
                         <tr ng-repeat="produto in produtos">
-                            <td>{{produto.titulo}}</td>
+                            <td>
+                                <button ng-click="remover(produto)" class="btn btn-danger btn-xs">X</button>
+                                <button ng-click="editar(produto)" class="btn btn-prymary btn-xs">Editar</button>
+                                {{produto.titulo}}</td>
                             <td>{{produto.descricao}}</td>
                             <td>{{produto.quantidade}}</td>
                             <td>{{produto.valor}}</td>
